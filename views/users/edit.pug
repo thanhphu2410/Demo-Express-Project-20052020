@@ -1,4 +1,4 @@
-extends ../layouts/common.pug
+extends ../layouts/create.pug
 block content
     nav.navbar.navbar-expand-sm.bg-dark.navbar-light.shadow.p-3.header
         a.navbar-brand.navHome(href='./' style="display:none") Home
@@ -14,23 +14,22 @@ block content
                     a.nav-link(href='../create') NEW USER
                 li.nav-item
                     a.nav-link(href='../../products') PRODUCTS
-    h1.ml-3 Update Profile
-    if error 
-        .alert.alert-danger= error
-    form(method="post")
-        .form-group(class="col-4")
-            label(for='name') Name
-            input#name.form-control(type="text" name="name" value=users.name)
-        .form-group(class="col-4")
-            label(for='phone') Phone
-            input#phone.form-control(type="text" name="phone" value=users.phone)
-        .form-group(class="col-4")
-            label(for='address') Address
-            input#phone.form-control(type="text" name="address" value=users.address)
-        .form-group(class="col-4")
-            label(for='grade') Grade
-            input#phone.form-control(type="text" name="grade" value=users.grade)
-        button.btn.btn-success(type='submit' class="ml-3") Accept
-    form(action='/users/delete/' + users.id method="post")
-        button.btn.btn-danger(type='submit' class="ml-3") Delete User
+    .container.register-form.mt-5
+        form(method="post")
+            .note
+                p Update information
+            .form-content
+                .row
+                    .col-md-6
+                        .form-group
+                            input.form-control(type="text" name="name" value=users.name placeholder='Name' required='')
+                        .form-group
+                            input.form-control(type="text" name="phone" value=users.phone placeholder='Phone Number' required='')
+                    .col-md-6
+                        .form-group
+                            input.form-control(type="text" name="address" value=users.address placeholder='Address' required='')
+                        .form-group
+                            input.form-control(type="text" name="grade" value=users.grade placeholder='Grade' required='')
+                button.btnSubmit(type='submit') Accept
+                a.btn.btnSubmit.btnDelete(href="/users/delete/" + users.id) Delete
     

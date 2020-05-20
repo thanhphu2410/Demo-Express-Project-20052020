@@ -35,14 +35,6 @@ router.get('/register', function(req, res){
 })
 
 router.post('/register',upload.single('avatar'),function(req, res){
-    if(req.body.username == ''||req.body.password == ''||req.body.name == ''||req.body.phone == ''){
-        res.render('auth/register',{
-            error: 'Missing information! Please check',
-            name: req.body.name,
-            phone: req.body.phone
-        })
-        return;
-    }
     var founded  = db.get('account').find({ username: req.body.username}).value();
     if(founded){
         res.render('auth/register',{
