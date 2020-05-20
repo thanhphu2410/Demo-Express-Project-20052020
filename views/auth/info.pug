@@ -1,0 +1,22 @@
+extends ../layouts/common.pug
+block content
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-light.shadow.p-2.header
+        a.navbar-brand(href='../')
+            img(src=image, width="40")
+        button.navbar-toggler.mr-2(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+            span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                a.nav-link(href='../users') USERS
+                li.nav-item
+                a.nav-link(href='users/create') NEW USER
+                li.nav-item
+                a.nav-link(href='./products') PRODUCTS
+    .card(style='width:400px' class="mx-auto mt-4")
+        img.card-img-top(src= image)
+        .card-body
+            h4.card-title= account.name
+            p.card-text Phone Number: #{account.phone}
+            form(action='/auth/logout' method="post")
+                button.btn.btn-danger(type='submit') Log Out

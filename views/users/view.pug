@@ -1,0 +1,9 @@
+extends ../layouts/common.pug
+block content
+    .card(style='width:400px' class="mx-auto mt-4")
+        img.card-img-top(src='https://www.w3schools.com/bootstrap4/img_avatar1.png', alt='Card image', style='width:100%')
+        .card-body
+            h4.card-title.pl-2= users.name
+            p.card-text.pl-2 Phone Number: #{users.phone}
+            p.card-text.pl-2 Grade: #{users.grade}
+            p.card-text.pl-2 Address: #{users.address}

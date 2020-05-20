@@ -1,0 +1,15 @@
+.header a {
+    color: black;
+} 
+.header {
+    background-color: rgba(243, 243, 243, 0.678) !important;
+}
+@media (max-width: 570px){
+    .navHome {
+        display: block !important;
+        color: black;
+    }
+    .navHome-1 {
+        display: none;
+    }
+}

@@ -1,0 +1,33 @@
+extends ../layouts/common.pug
+block content
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-light.shadow.p-3.header
+        a.navbar-brand.navHome(href='./' style="display:none") Home
+        button.navbar-toggler.mr-2(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+            span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item.navHome-1
+                    a.nav-link(href='../') HOME
+                li.nav-item
+                    a.nav-link(href='../users') USERS
+                li.nav-item
+                    a.nav-link.active(href='./create') NEW USER
+                li.nav-item
+                    a.nav-link(href='../products') PRODUCTS
+    h1.ml-3 New User
+    if error 
+        .alert.alert-danger= error
+    form(action="/users/create", method="post")
+        .form-group(class="col-4")
+            label(for='name') Name
+            input#name.form-control(type="text" name="name" value=name)
+        .form-group(class="col-4")
+            label(for='phone') Phone
+            input#phone.form-control(type="text" name="phone" value=phone)
+        .form-group(class="col-4")
+            label(for='address') Address
+            input#phone.form-control(type="text" name="address" value=address)
+        .form-group(class="col-4")
+            label(for='grade') Grade
+            input#phone.form-control(type="text" name="grade" value=grade)
+        button.btn.btn-primary(type='submit' class="ml-3") Create

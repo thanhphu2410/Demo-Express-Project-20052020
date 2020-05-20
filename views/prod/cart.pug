@@ -1,0 +1,35 @@
+extends ../layouts/common.pug
+block content
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-light.shadow.p-3.header
+        a.navbar-brand.navHome(href='./' style="display:none") Home
+        button.navbar-toggler.mr-2(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+            span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item.navHome-1
+                    a.nav-link(href='../') HOME
+                li.nav-item
+                    a.nav-link(href='../../users') USERS
+                li.nav-item
+                    a.nav-link(href='../../users/create') NEW USER
+                li.nav-item
+                    a.nav-link(href='../products') PRODUCTS
+    .h1.m-5 YOUR CART
+    if noti
+        h3.ml-5 #{noti}
+    if !noti
+        .h5.m-5 Subtotal (#{prods.length} item): #{subTotal}$
+        .row.ml-5.mr-5
+            each prod in prods
+                .col-sm-6.col-md-4.col-lg-3
+                    .card.mb-3
+                        img.card-img-top(src= prod.prods.image)
+                        .card-body
+                            h4.card-title.pl-2= prod.prods.name
+                            p.card-text.pl-2= prod.prods.description
+                            b.card-text.pl-2 Price: #{prod.prods.price}
+                            if prod.prods.amount
+                                b.card-text.pl-2 Amount: #{prod.prods.amount}
+                            br
+                            a(href="./cart/" + prod.prods.id)
+                                span.badge.badge-danger.ml-2.mt-1 Delete
