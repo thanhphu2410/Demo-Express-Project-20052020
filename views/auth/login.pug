@@ -15,4 +15,7 @@ block content
                             label(for='inputPassword') Password
                         label.mb-3 You don't have an account? 
                             a(href="/auth/register") Sign Up
+                        br
+                        if error    
+                            label.mb-3.errorLabel= error
                         button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Sign in

@@ -6,6 +6,8 @@ var mongoose = require('mongoose')
 var app = express()
 var port = 3000
 
+var Account = require('./models/account.model')
+
 mongoose.connect(process.env.MONGO_URL);
 
 var usersRoute = require('./routes/users.route')
@@ -24,10 +26,15 @@ app.set('view engine', 'pug')
 app.set('views', './views')
 
 app.get('/',requireAuth.requireLogin, function(req, res){
-    var account = db.get('account').find({ id: req.signedCookies.accountId}).value();
-    res.render('index',{
-        account: account
-})})
+    Account.find().then(function(account){
+        var acc = account.find(function(x){
+            return x.id === req.signedCookies.accountId;
+        })
+        res.render('index',{
+            account: acc
+        })
+    })
+})
 
 app.use('/users',requireAuth.requireLogin,usersRoute)
 app.use('/auth',authRoute)

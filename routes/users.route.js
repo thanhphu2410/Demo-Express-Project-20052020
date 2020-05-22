@@ -1,10 +1,7 @@
 var express = require('express')
-var shortid = require('shortid')
-var db = require('../db')
 var User = require('../models/user.model')
 
 var router = express.Router()
-
 
 router.get('/', function(req, res){
     User.find().then(function(users){

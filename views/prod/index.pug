@@ -37,13 +37,13 @@ block content
                     a.page-link(href='/products' + '?page=' + (page - 1)) Previous
             li.page-item.active
                 a.page-link(href='#') #{page}
-            if (page + 1) < 14
+            if (page + 1) < 4
                 li.page-item
                     a.page-link(href='/products' + '?page=' + (page + 1)) #{page + 1}
-            if (page + 2) < 14
+            if (page + 2) < 4
                 li.page-item
                     a.page-link(href='/products' + '?page=' + (page + 2)) #{page + 2}
-            if (page + 1) < 14
+            if (page + 1) < 4
                 li.page-item
                     a.page-link(href='/products' + '?page=' + (page + 1)) Next
 
