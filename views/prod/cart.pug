@@ -23,10 +23,10 @@ block content
             each prod in prods
                 .col-sm-6.col-md-4.col-lg-3
                     .card.mb-3
-                        img.card-img-top(src= prod.prodImage)
+                        img.card-img-top(src= prod.prods.image)
                         .card-body
-                            h4.card-title.pl-2= prod.prodName
-                            p.card-text.pl-2= prod.prodDescription
-                            b.card-text.pl-2 Price: #{prod.prodPrice}
-                            a(href="./cart/" + prod.prodId)
+                            h4.card-title.pl-2= prod.prods.name
+                            p.card-text.pl-2= prod.prods.description
+                            b.card-text.pl-2 Price: #{prod.prods.price}
+                            a(href="./cart/" + prod.prods.id)
                                 span.badge.badge-danger.ml-2.mt-1 Delete

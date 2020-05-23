@@ -39,11 +39,12 @@ router.get('/cart/add/:id', function(req, res){
                 if(err) return;
             })
             req.body.id = findAccount.id;
-            req.body.prodId = findProduct._id;
-            req.body.prodName = findProduct.name;
-            req.body.prodPrice = findProduct.price;
-            req.body.prodDescription = findProduct.description;
-            req.body.prodImage = findProduct.image;
+            req.body.prods = findProduct;
+            // req.body.prodId = findProduct._id;
+            // req.body.prodName = findProduct.name;
+            // req.body.prodPrice = findProduct.price;
+            // req.body.prodDescription = findProduct.description;
+            // req.body.prodImage = findProduct.image;
             Item.create(req.body).then(function(err){
                 if(err) return;
             })
@@ -59,7 +60,7 @@ router.get('/cart',function(req, res){
         }) 
         var subTotal = 0;
         for(var i=0;i<filter.length;i++){
-            subTotal += parseFloat(filter[i].prodPrice.slice(1));
+            subTotal += parseFloat(filter[i].prods.price.slice(1));
         }
         subTotal = Math.round(subTotal * 100) / 100;
         if(filter.length == 0){
@@ -83,7 +84,7 @@ router.get('/cart/:id', function(req, res){
             return x.id === req.signedCookies.accountId
         }) 
         var founded = filter.find(function(x){
-            return x.prodId == id;
+            return x.prods.id == id;
         })
         Account.find().then(function(account){
             var findAccount = account.find(function(x){

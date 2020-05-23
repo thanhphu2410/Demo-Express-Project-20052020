@@ -2,11 +2,7 @@ var mongoose = require('mongoose');
 
 var itemSchema = new mongoose.Schema({ 
     id: 'String',
-    prodId: 'String',
-    prodName: 'String',
-    prodPrice: 'String',
-    prodDescription: 'String',
-    prodImage: 'String',
+    prods: 'Object'
 });
 var Item = mongoose.model('Item', itemSchema, 'item');
 
