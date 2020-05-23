@@ -35,9 +35,9 @@ router.get('/cart/add/:id', function(req, res){
             Account.updateOne({id: req.signedCookies.accountId},{cartItem: parseInt(findAccount.cartItem) + 1}).then(function(err){
                 if(err) return;
             })
-            // req.body.id = findAccount.id;
-            // req.body.prods = products[0].id;
-            Item.create({id: findAccount.id, prods:  products[0]}).then(function(err){
+            req.body.id = findAccount.id;
+            req.body.prods = products[0];
+            Item.create(req.body).then(function(err){
                 if(err) return;
             })
             res.redirect('/products?page=' + page)
