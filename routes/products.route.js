@@ -28,19 +28,22 @@ router.get('/', function(req, res){
 router.get('/cart/add/:id', function(req, res){
     Account.find().then(function(account){
         var id = req.params.id;
-        Product.find({_id: id}).then(function(products){
+        Product.find().then(function(products){
             var findAccount = account.find(function(x){
                 return x.id === req.signedCookies.accountId
+            });
+            var findProduct = products.find(function(x){
+                return x.id === id
             });
             Account.updateOne({id: req.signedCookies.accountId},{cartItem: parseInt(findAccount.cartItem) + 1}).then(function(err){
                 if(err) return;
             })
             req.body.id = findAccount.id;
-            // req.body.prodId = products[0]._id;
-            req.body.prodName = products[0].name;
-            req.body.prodPrice = products[0].price;
-            req.body.prodDescription = products[0].description;
-            req.body.prodImage = products[0].image;
+            req.body.prodId = findProduct._id;
+            req.body.prodName = findProduct.name;
+            req.body.prodPrice = findProduct.price;
+            req.body.prodDescription = findProduct.description;
+            req.body.prodImage = findProduct.image;
             Item.create(req.body).then(function(err){
                 if(err) return;
             })
