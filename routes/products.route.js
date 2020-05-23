@@ -36,7 +36,7 @@ router.get('/cart/add/:id', function(req, res){
                 if(err) return;
             })
             req.body.id = findAccount.id;
-            req.body.prodId = products[0]._id;
+            // req.body.prodId = products[0]._id;
             req.body.prodName = products[0].name;
             req.body.prodPrice = products[0].price;
             req.body.prodDescription = products[0].description;
