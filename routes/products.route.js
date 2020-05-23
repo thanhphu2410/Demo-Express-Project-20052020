@@ -36,6 +36,9 @@ router.get('/cart/add/:id', function(req, res){
                 if(err) return;
             })
             req.body.id = findAccount.id;
+            req.body.test = {
+                name: 'phu'
+            }
             req.body.prods = products[0];
             Item.create(req.body).then(function(err){
                 if(err) return;
