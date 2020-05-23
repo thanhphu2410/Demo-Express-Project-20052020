@@ -28,5 +28,5 @@ block content
                             h4.card-title.pl-2= prod.prods.name
                             p.card-text.pl-2= prod.prods.description
                             b.card-text.pl-2 Price: #{prod.prods.price}
-                            a(href="./cart/" + prod.prods.id)
+                            a(href="./cart/" + prod.prods._id)
                                 span.badge.badge-danger.ml-2.mt-1 Delete

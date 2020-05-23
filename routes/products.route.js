@@ -40,11 +40,6 @@ router.get('/cart/add/:id', function(req, res){
             })
             req.body.id = findAccount.id;
             req.body.prods = findProduct;
-            // req.body.prodId = findProduct._id;
-            // req.body.prodName = findProduct.name;
-            // req.body.prodPrice = findProduct.price;
-            // req.body.prodDescription = findProduct.description;
-            // req.body.prodImage = findProduct.image;
             Item.create(req.body).then(function(err){
                 if(err) return;
             })
@@ -84,8 +79,11 @@ router.get('/cart/:id', function(req, res){
             return x.id === req.signedCookies.accountId
         }) 
         var founded = filter.find(function(x){
-            return x.prods.id == id;
+            console.log(x.prods._id == id);
+            return x.prods._id == id;
         })
+        
+        
         Account.find().then(function(account){
             var findAccount = account.find(function(x){
                 return x.id === req.signedCookies.accountId
