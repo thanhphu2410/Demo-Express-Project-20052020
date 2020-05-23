@@ -4,7 +4,7 @@ var express = require('express')
 var cookieParser = require('cookie-parser')
 var mongoose = require('mongoose')
 var app = express()
-var port = 3000
+var port = process.env.PORT || 3000;
 
 var Account = require('./models/account.model')
 
