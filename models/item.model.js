@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var itemSchema = new mongoose.Schema({ 
-    id: 'string',
-    prods: 'object'
+    id: 'String',
+    prods: 'Object'
 });
 var Item = mongoose.model('Item', itemSchema, 'item');
 
