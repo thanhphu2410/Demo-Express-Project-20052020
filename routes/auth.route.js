@@ -2,6 +2,13 @@ var express = require('express')
 var multer  = require('multer')
 var shortid = require('shortid')
 var md5 = require('md5')
+var cloudinary = require('cloudinary')
+
+cloudinary.config({
+    cloud_name: process.env.Cloud_Name,
+    api_key: process.env.Api_Key,
+    api_secret: process.env.Api_Secret
+});
 
 var Account = require('../models/account.model')
 
@@ -55,10 +62,16 @@ router.post('/register',upload.single('avatar'),function(req, res){
         req.body.id = shortid.generate();
         req.body.password = md5(req.body.password);
         req.body.cartItem = '0';
-        req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
-        Account.create(req.body).then(function(err){
-            if(err) return;
+        cloudinary.uploader.upload(req.file.path,function(result){
+            console.log(result.url);
+            req.body.avatar = result.url;
+            Account.create(req.body).then(function(err){
+                if(err) return;
+            })
         })
+        
+        // req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
+        
         res.redirect('/auth/login')
     })
 })
@@ -73,10 +86,8 @@ router.get('/:id', function(req, res){
             res.redirect('/auth/login')
             return;
         }
-        var image = "http://localhost:3000/" +  acc.avatar;
         res.render('auth/info',{
-            account: acc,
-            image: image
+            account: acc
         })
     })
 })
