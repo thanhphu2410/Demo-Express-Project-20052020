@@ -69,9 +69,6 @@ router.post('/register',upload.single('avatar'),function(req, res){
                 if(err) return;
             })
         })
-        
-        // req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
-        
         res.redirect('/auth/login')
     })
 })
