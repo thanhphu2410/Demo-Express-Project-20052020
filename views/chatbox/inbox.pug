@@ -1,0 +1,87 @@
+extends ../layouts/chatbox.pug
+block content
+  .container
+    h3.text-center.mt-3.mb-3 Messaging
+    .messaging
+        .inbox_msg.shadow-lg
+            .inbox_people
+                .headind_srch
+                    .recent_heading
+                        h4 Chat
+                    
+                .inbox_chat
+                    .chat_list.active_chat
+                        .chat_people
+                            .chat_img
+                                img(src=users.avatar)
+                            .chat_ib
+                                h5= users.name
+                    if recent
+                        each item in recent
+                            a(href="../chatbox/" + item.id)
+                                .chat_list
+                                    .chat_people
+                                        .chat_img
+                                            img(src=item.avatar)
+                                        .chat_ib
+                                            h5= item.name 
+            if inbox
+                .mesgs
+                    .msg_history
+                        each item,index in inbox.SorR
+                            if item == "s"
+                                .incoming_msg
+                                    .incoming_msg_img
+                                        img(src=users.avatar)
+                                    .received_msg
+                                        .received_withd_msg
+                                            p= inbox.chats[index]
+                                                span.time_date  #{inbox.date[index]}
+                                        
+                            if item == "r"
+                                .outgoing_msg
+                                    .sent_msg
+                                        p= inbox.chats[index]
+                                            span.time_date(style="color: white") #{inbox.date[index]}
+                    form(method="post")          
+                        .edit
+                            .type_msg
+                                .input_msg_write
+                                    input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
+                                    button.msg_send_btn
+                                        i.fa.fa-paper-plane-o(aria-hidden='true')
+            if chat
+                .mesgs
+                    .msg_history
+                        each item,index in chat.SorR
+                            if item == "s"
+                                .outgoing_msg
+                                    .sent_msg
+                                        p= chat.chats[index]
+                                            span.time_date(style="color: white") #{chat.date[index]}
+
+                                            
+                            if item == "r"
+                                .incoming_msg
+                                    .incoming_msg_img
+                                        img(src=users.avatar)
+                                    .received_msg
+                                        .received_withd_msg
+                                            p= chat.chats[index]
+                                                span.time_date #{chat.date[index]}
+                    form(method="post")          
+                        .edit
+                            .type_msg
+                                .input_msg_write
+                                    input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
+                                    button.msg_send_btn
+                                        i.fa.fa-paper-plane-o(aria-hidden='true')
+            if !chat && !inbox
+                .mesgs
+                     form(method="post")          
+                        .edit
+                            .type_msg
+                                .input_msg_write
+                                    input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
+                                    button.msg_send_btn
+                                        i.fa.fa-paper-plane-o(aria-hidden='true')

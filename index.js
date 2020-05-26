@@ -13,6 +13,7 @@ mongoose.connect(process.env.MONGO_URL);
 var usersRoute = require('./routes/users.route')
 var authRoute = require('./routes/auth.route')
 var prodRoute = require('./routes/products.route')
+var chatRoute = require('./routes/chatbox.route')
 
 var requireAuth = require('./middleware/requireAuth.middleware')
 
@@ -39,6 +40,7 @@ app.get('/',requireAuth.requireLogin, function(req, res){
 app.use('/users',requireAuth.requireLogin,usersRoute)
 app.use('/auth',authRoute)
 app.use('/products',prodRoute)
+app.use('/chatbox',chatRoute)
 
 
 app.use(express.static('public'))

@@ -6,7 +6,7 @@ block content
             .card.card-signin.my-5
                 .card-body
                     h5.card-title.text-center Sign In
-                    form.form-signin(action="/auth/login", method="post")
+                    form.form-signin(action="/auth/login", method="post" autocomplete="off")
                         .form-label-group
                             input#username.form-control(type="text" name="username" value=username, placeholder='Username', required='')
                             label(for='username') Username

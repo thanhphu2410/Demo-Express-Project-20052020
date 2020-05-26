@@ -8,7 +8,7 @@ block content
             .card.card-signin.my-5
                 .card-body
                     h5.card-title.text-center Sign Up
-                    form.form-signin(action="/auth/register", method="post",enctype="multipart/form-data")
+                    form.form-signin(action="/auth/register", method="post",enctype="multipart/form-data" autocomplete="off")
                         .form-label-group
                             input#username.form-control(type="text" name="username" placeholder='Username' required='')
                             label(for='username') Username
