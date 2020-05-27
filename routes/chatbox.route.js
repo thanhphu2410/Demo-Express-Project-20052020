@@ -22,8 +22,6 @@ router.get('/', function(req, res){
                         }
                     }
                 })
-                console.log(acc);
-                
                 res.render('chatbox/index',{
                     users: founded,
                     q: q,
@@ -83,8 +81,6 @@ router.get('/:id', function(req, res){
                         }
                     }
                 })
-                console.log(accRecent);
-                
                 res.render('chatbox/inbox',{
                     users: acc,
                     inbox: chat,
@@ -111,7 +107,6 @@ router.get('/:id', function(req, res){
                         }
                     }
                 })
-                console.log(accRecent);
                 res.render('chatbox/inbox',{
                     users: acc,
                     chat: chat,

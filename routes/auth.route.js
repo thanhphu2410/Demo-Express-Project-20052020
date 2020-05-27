@@ -63,7 +63,6 @@ router.post('/register',upload.single('avatar'),function(req, res){
         req.body.password = md5(req.body.password);
         req.body.cartItem = '0';
         cloudinary.uploader.upload(req.file.path,function(result){
-            console.log(result.url);
             req.body.avatar = result.url;
             Account.create(req.body).then(function(err){
                 if(err) return;

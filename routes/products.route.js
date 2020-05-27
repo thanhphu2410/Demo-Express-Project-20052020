@@ -79,7 +79,6 @@ router.get('/cart/:id', function(req, res){
             return x.id === req.signedCookies.accountId
         }) 
         var founded = filter.find(function(x){
-            console.log(x.prods._id == id);
             return x.prods._id == id;
         })
         
