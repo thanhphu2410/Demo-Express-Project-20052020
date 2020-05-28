@@ -39,8 +39,8 @@ app.get('/',requireAuth.requireLogin, function(req, res){
 
 app.use('/users',requireAuth.requireLogin,usersRoute)
 app.use('/auth',authRoute)
-app.use('/products',prodRoute)
-app.use('/chatbox',chatRoute)
+app.use('/products',requireAuth.requireLogin,prodRoute)
+app.use('/chatbox',requireAuth.requireLogin,chatRoute)
 
 
 app.use(express.static('public'))
