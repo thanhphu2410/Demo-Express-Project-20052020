@@ -1,13 +1,13 @@
 extends ../layouts/common.pug
 block content
     nav.navbar.navbar-expand-sm.bg-dark.navbar-light.shadow.p-3.header
-        a.navbar-brand.navHome(href='./' style="display:none") Home
+        a.navbar-brand.navHome(href='../' style="display:none") Home
         button.navbar-toggler.mr-2(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
             span.navbar-toggler-icon
         #collapsibleNavbar.collapse.navbar-collapse
             ul.navbar-nav
                 li.nav-item.navHome-1
-                    a.nav-link(href='../../') HOME
+                    a.nav-link(href='../') HOME
                 li.nav-item
                     a.nav-link(href='../users') USERS
                 li.nav-item
@@ -18,10 +18,10 @@ block content
                     a.nav-link(href='./products/cart') CART
                         span.badge.badge-dark.ml-1 #{amount}
 
-    .h1.m-5 PRODUCTS
-    .row.ml-5.mr-5
+    .h1.h1Product.m-5 PRODUCTS
+    .row.ml-5.mr-5.products
         each prod in prods
-                .col-sm-6.col-md-4.col-lg-3
+                .col-12.col-sm-6.col-md-4.col-lg-3
                     .card.mb-3
                         img.card-img-top(src= prod.image)
                         .card-body

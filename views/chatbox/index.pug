@@ -4,7 +4,7 @@ block content
     h3.text-center.mt-3.mb-3 Messaging
     .messaging
       .inbox_msg.shadow-lg
-        .inbox_people
+        .inbox_people.editMess
           .headind_srch
             .recent_heading
               h4 Chat
@@ -19,19 +19,19 @@ block content
             .inbox_chat
               each user in users
                 a(href="./chatbox/" + user.id)
-                  .chat_list
+                  .chat_list.editChatList
                     .chat_people
                       .chat_img
                         img(src=user.avatar)
                       .chat_ib
-                        h5= user.name 
+                        h5.editName= user.name 
           if recent
             .inbox_chat
               each item in recent
                 a(href="./chatbox/" + item.id)
-                  .chat_list
+                  .chat_list.editChatList
                     .chat_people
                       .chat_img
                         img(src=item.avatar)
                       .chat_ib
-                        h5= item.name 
+                        h5.editName= item.name 

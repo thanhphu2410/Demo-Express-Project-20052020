@@ -134,3 +134,237 @@ label a:hover{
     color: #777;
 }
 }
+
+
+
+@media (max-width: 900px) {
+    .container {
+        width: 45%;
+        position: absolute;
+        right: 23%;
+        top: 16%;
+    }
+} 
+@media (max-width: 815px) {
+    .container {
+        width: 40%;
+        position: absolute;
+        right: 30%;
+        top: 16%;
+    }
+} 
+@media (max-width: 735px) {
+    .container {
+        width: 45%;
+        position: absolute;
+        right: 27%;
+        top: 16%;
+    }
+} 
+@media (max-width: 653px) {
+    .container {
+        width: 48%;
+        position: absolute;
+        right: 26%;
+        top: 16%;
+    }
+} 
+@media (max-width: 612px) {
+    .container {
+        width: 50%;
+        position: absolute;
+        right: 26%;
+        top: 16%;
+    }
+}
+@media (max-width: 586px) {
+    .container {
+        width: 53%;
+        position: absolute;
+        right: 23%;
+        top: 16%;
+    }
+} 
+@media (max-width: 553px) {
+    .container {
+        width: 60%;
+        position: absolute;
+        right: 19%;
+        top: 16%;
+    }
+} 
+@media (max-width: 490px) {
+    .container {
+        width: 65%;
+        position: absolute;
+        right: 17%;
+        top: 16%;
+    }
+} 
+@media (max-width: 451px) {
+    .container {
+        width: 70%;
+        position: absolute;
+        right: 15%;
+        top: 16%;
+    }
+} 
+@media (max-width: 422px) {
+    .container {
+        width: 75%;
+        position: absolute;
+        right: 13%;
+        top: 16%;
+    }
+} 
+@media (max-width: 392px) {
+    .container {
+        width: 80%;
+        position: absolute;
+        right: 10%;
+        top: 16%;
+    }
+} 
+@media (max-width: 367px) {
+    .container {
+        width: 85%;
+        position: absolute;
+        right: 7%;
+        top: 16%;
+    }
+} 
+@media (max-width: 345px) {
+    .container {
+        width: 90%;
+        position: absolute;
+        right: 5%;
+        top: 16%;
+    }
+} 
+@media (max-width: 329px) {
+    .container {
+        width: 90%;
+        position: absolute;
+        right: 5%;
+        top: 16%;
+    }
+} 
+
+
+
+.register {
+    position: absolute;
+    top: 5%;
+}
+@media (max-width: 900px) {
+    .register {
+        width: 45%;
+        position: absolute;
+        right: 23%;
+        top: 7%;
+    }
+} 
+@media (max-width: 815px) {
+    .register {
+        width: 40%;
+        position: absolute;
+        right: 30%;
+        top: 7%;
+    }
+} 
+@media (max-width: 735px) {
+    .register {
+        width: 45%;
+        position: absolute;
+        right: 27%;
+        top: 7%;
+    }
+} 
+@media (max-width: 653px) {
+    .register {
+        width: 48%;
+        position: absolute;
+        right: 26%;
+        top: 7%;
+    }
+} 
+@media (max-width: 612px) {
+    .register {
+        width: 50%;
+        position: absolute;
+        right: 26%;
+        top: 7%;
+    }
+}
+@media (max-width: 586px) {
+    .register {
+        width: 53%;
+        position: absolute;
+        right: 23%;
+        top: 7%;
+    }
+} 
+@media (max-width: 553px) {
+    .register {
+        width: 60%;
+        position: absolute;
+        right: 19%;
+        top: 7%;
+    }
+} 
+@media (max-width: 490px) {
+    .register {
+        width: 65%;
+        position: absolute;
+        right: 17%;
+        top: 7%;
+    }
+} 
+@media (max-width: 451px) {
+    .register {
+        width: 70%;
+        position: absolute;
+        right: 15%;
+        top: 7%;
+    }
+} 
+@media (max-width: 422px) {
+    .register {
+        width: 75%;
+        position: absolute;
+        right: 13%;
+        top: 7%;
+    }
+} 
+@media (max-width: 392px) {
+    .register {
+        width: 80%;
+        position: absolute;
+        right: 10%;
+        top: 7%;
+    }
+} 
+@media (max-width: 367px) {
+    .register {
+        width: 85%;
+        position: absolute;
+        right: 7%;
+        top: 7%;
+    }
+} 
+@media (max-width: 345px) {
+    .register {
+        width: 90%;
+        position: absolute;
+        right: 5%;
+        top: 7%;
+    }
+} 
+@media (max-width: 329px) {
+    .register {
+        width: 90%;
+        position: absolute;
+        right: 5%;
+        top: 7%;
+    }
+} 

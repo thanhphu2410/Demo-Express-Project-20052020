@@ -163,10 +163,68 @@ img{ max-width:100%;}
   overflow-y: auto;
 }
 .edit {
-    width: 46%;
-    position: absolute;
-    bottom: 5%;
+  width: 46%;
+  position: absolute;
+  bottom: 5%;
 }
 img {
   border-radius: 50%;
+}
+.editChatList {
+  position: relative;
+}
+.editName {
+  position: absolute;
+  top: 40%; 
+}
+@media (max-width: 800px){
+  .editMess {
+    width: 100%;
+  }
+  .hideIB {
+    display: none;
+  } 
+  .mesgs {
+    width: 100%;
+  }
+  .editTyping {
+    margin-bottom: 40px;
+    width: 90%;
+  }
+}
+@media (max-width: 600px){
+  .sent_msg {
+    width: 60%;
+  }
+  .incoming_msg {
+    width: 110%;
+  }
+  .editTyping {
+    margin-bottom: 40px;
+    width: 85%;
+  }
+}
+@media (max-width: 420px){
+  .sent_msg {
+    width: 70%;
+  }
+  .incoming_msg {
+    width: 120%;
+  }
+  .editTyping {
+    margin-bottom: 40px;
+    width: 80%;
+  }
+}
+@media (max-width: 340px){
+  .sent_msg {
+    width: 80%;
+  }
+  .incoming_msg {
+    width: 130%;
+  }
+  .editTyping {
+    margin-bottom: 40px;
+    width: 75%;
+  }
 }

@@ -13,3 +13,26 @@
         display: none;
     }
 }
+@media (max-width: 373px){
+    .btnActions {
+        display: none;
+    }
+}
+@media (max-width: 480px){
+    .h1Cart {
+        font-size: x-large;
+        margin: 10px 0 10px 25px !important;
+    }
+    .h5Subtotal {
+        font-size: large;
+        margin: 10px 0 20px 25px !important;
+    }
+    .h1Product {
+        font-size: x-large;
+        margin-left: 20px !important;
+    }
+    .products, .cart {
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+}

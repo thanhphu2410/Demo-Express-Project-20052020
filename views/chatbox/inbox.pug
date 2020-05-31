@@ -4,7 +4,7 @@ block content
     h3.text-center.mt-3.mb-3 Messaging
     .messaging
         .inbox_msg.shadow-lg
-            .inbox_people
+            .inbox_people.hideIB
                 .headind_srch
                     .recent_heading
                         h4 Chat
@@ -44,7 +44,7 @@ block content
                                         p= inbox.chats[index]
                                             span.time_date(style="color: white") #{inbox.date[index]}
                     form(method="post")          
-                        .edit
+                        .edit.editTyping
                             .type_msg
                                 .input_msg_write
                                     input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
@@ -70,7 +70,7 @@ block content
                                             p= chat.chats[index]
                                                 span.time_date #{chat.date[index]}
                     form(method="post")          
-                        .edit
+                        .edit.editTyping
                             .type_msg
                                 .input_msg_write
                                     input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
@@ -79,7 +79,7 @@ block content
             if !chat && !inbox
                 .mesgs
                      form(method="post")          
-                        .edit
+                        .edit.editTyping
                             .type_msg
                                 .input_msg_write
                                     input.write_msg(type='text' autocomplete="off" name='mess' placeholder='Type a message' required='')
