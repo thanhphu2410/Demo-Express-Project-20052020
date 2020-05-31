@@ -118,6 +118,7 @@ img{ max-width:100%;}
   float: left;
   padding: 30px 15px 0 25px;
   width: 60%;
+  position: relative;
 }
  .sent_msg p {
   background: #008ab1 none repeat scroll 0 0;
@@ -188,8 +189,9 @@ img {
     width: 100%;
   }
   .editTyping {
-    margin-bottom: 40px;
-    width: 90%;
+    position: absolute;
+    bottom: 0%;
+    width: 95%;
   }
 }
 @media (max-width: 600px){
@@ -200,8 +202,9 @@ img {
     width: 110%;
   }
   .editTyping {
-    margin-bottom: 40px;
-    width: 85%;
+    position: absolute;
+    bottom: 0%;
+    width: 90%;
   }
 }
 @media (max-width: 420px){
@@ -212,8 +215,9 @@ img {
     width: 120%;
   }
   .editTyping {
-    margin-bottom: 40px;
-    width: 80%;
+    position: absolute;
+    bottom: 0%;
+    width: 85%;
   }
 }
 @media (max-width: 340px){
@@ -224,7 +228,8 @@ img {
     width: 130%;
   }
   .editTyping {
-    margin-bottom: 40px;
-    width: 75%;
+    position: absolute;
+    bottom: 0%;
+    width: 80%;
   }
 }
