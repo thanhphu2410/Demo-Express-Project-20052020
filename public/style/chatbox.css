@@ -23,8 +23,8 @@ img{ max-width:100%;}
   width: 40%; border-right:1px solid #80797962;
 }
 .chat_list:hover{
-  background:#ebebeb;
-  transition: all 0.5s;
+  background: linear-gradient(to right, #83a4d4, #b6fbff);
+  transition: all 1s;
 }
 .inbox_msg {
   /* border: 1px solid #3b3b3b; */
@@ -79,7 +79,7 @@ img{ max-width:100%;}
 }
 .inbox_chat { height: 550px; overflow-y: scroll;}
 
-.active_chat{ background:#ebebeb;}
+.active_chat{ background: linear-gradient(to right, #ece9e6, #ffffff);}
 
 .incoming_msg {
   margin-bottom: 15px;
@@ -121,7 +121,7 @@ img{ max-width:100%;}
   position: relative;
 }
  .sent_msg p {
-  background: #008ab1 none repeat scroll 0 0;
+  background: #0072ff;
   border-radius: 3px;
   font-size: 14px;
   margin: 0; color:#fff;
@@ -144,7 +144,7 @@ img{ max-width:100%;}
 
 .type_msg {border-top: 1px solid #80797962;position: relative;}
 .msg_send_btn {
-  background: #05728f none repeat scroll 0 0;
+  background: #348ac7 none repeat scroll 0 0;
   border: medium none;
   border-radius: 50%;
   color: #fff;
@@ -152,7 +152,7 @@ img{ max-width:100%;}
   font-size: 17px;
   height: 33px;
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 11px;
   width: 33px;
 }
@@ -164,9 +164,11 @@ img{ max-width:100%;}
   overflow-y: auto;
 }
 .edit {
-  width: 46%;
+  width: 100%;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
   position: absolute;
-  bottom: 5%;
+  bottom: -6%;
+  left: 0%;
 }
 img {
   border-radius: 50%;
@@ -191,7 +193,7 @@ img {
   .editTyping {
     position: absolute;
     bottom: 0%;
-    width: 95%;
+    width: 100%;
   }
 }
 @media (max-width: 600px){
@@ -204,7 +206,7 @@ img {
   .editTyping {
     position: absolute;
     bottom: 0%;
-    width: 90%;
+    width: 100%;
   }
 }
 @media (max-width: 420px){
@@ -217,7 +219,7 @@ img {
   .editTyping {
     position: absolute;
     bottom: 0%;
-    width: 85%;
+    width: 100%;
   }
 }
 @media (max-width: 340px){
@@ -230,6 +232,6 @@ img {
   .editTyping {
     position: absolute;
     bottom: 0%;
-    width: 80%;
+    width: 100%;
   }
 }
